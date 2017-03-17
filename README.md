@@ -12,7 +12,7 @@ Container for Row components, intended as a layout
 
 - Adheres to [Material Design responsive UI](https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints) standards for screens at or exceeding 1600 px
 - Fluid by default, allows the Grid to continue growing
-- Optionally fixed width and left or center aligned starting at 1600 px
+- Optionally fixed width for viewports larger than 1599 px, centered or left aligned
 
 #### Properties ####
 
