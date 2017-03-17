@@ -1,0 +1,64 @@
+{
+  "name": "react-material-responsive-grid-source",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A set of React components implementing the material-responsive-grid CSS framework.",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/STORIS/react-material-responsive-grid.git"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel -d ./build ./src",
+    "build:copy-files": "babel-node ./scripts/copy-files.js",
+    "clean:build": "rimraf ./build",
+    "prebuild": "npm run lint && npm run test && npm run clean:build",
+    "lint": "eslint --ignore-path .eslintignore -- ./src/. ",
+    "test": "jest"
+  },
+  "keywords": [
+    "grid",
+    "material design",
+    "responsive",
+    "react",
+    "components"
+  ],
+  "author": "Ken Gregory",
+  "license": "MIT",
+  "homepage": "https://github.com/STORIS/react-material-responsive-grid",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.22.1",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.2.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "cross-env": "^3.1.4",
+    "eslint": "^3.14.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "expect": "^1.20.2",
+    "fs-extra": "^2.1.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^19.0.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-test-renderer": "^15.4.2",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "material-responsive-grid": "^1.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}

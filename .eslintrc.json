@@ -1,0 +1,56 @@
+/*
+
+we use the airbnb guidelines as the basis for our rules (see: http://airbnb.io/javascript/)
+
+current set of overrides:
+
+- linebreak-style is being disabled because of our mixed environments of unix and windows
+- we prefer tabbed indentation since it is configurable in most editors.  the following rules allow us to use tabs for indentation:
+
+  - indent -> tab
+  - no-tabs -> off
+  - react/jsx-indent -> tab
+  - react/jsx-indent -> tab
+
+- the SwitchCase option for indent allows for indentation of cases in switchblocks
+
+- when using a constant value that was injected from .env, add the constant to the "globals" section in this format:
+  "__CONSTANT_NAME__": false
+*/
+{
+	"extends": "airbnb",
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es6": true,
+		"node": true,
+    	"jest": true
+	},
+	"globals": {
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"sourceType": "module"
+	},
+	"rules": {
+		"linebreak-style": 0,
+		"indent": ["error", "tab", {"SwitchCase": 1}],
+		"no-tabs": "off",
+		"react/jsx-indent": ["error",	"tab"],
+		"react/jsx-indent-props": ["error",	"tab"]
+	},
+	"plugins": [
+		"react",
+		"jsx-a11y"
+	],
+	"settings": {
+		"import/resolver": {
+			"webpack": {
+				"config": "./webpack.config.js"
+			}
+		}
+	}
+}
