@@ -9,7 +9,8 @@
     "url": "https://github.com/STORIS/react-material-responsive-grid.git"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production babel -d ./build ./src",
+	 "build": "npm run build:components && npm run build:copy-files",
+    "build:components": "cross-env NODE_ENV=production babel -d ./build ./src",
     "build:copy-files": "babel-node ./scripts/copy-files.js",
     "clean:build": "rimraf ./build",
     "prebuild": "npm run lint && npm run test && npm run clean:build",
