@@ -1,0 +1,30 @@
+.box {
+	background-color: rgba(255, 143, 0, 0.7);
+	border: solid 1px rgba(255, 143, 0, 0.5);
+	padding: 1.0em;
+	margin-bottom: 16px;
+	text-align: center;
+}
+
+.box-container {
+	padding: 16px 16px 0 16px;
+}
+
+.box-tall {
+	height: 64px;
+}
+
+.box-other {
+	background-color: rgba(64, 79, 98, 0.2);
+	border: solid 1px rgba(64, 79, 98, 0.1);
+}
+
+.code {
+	padding: 0.8em;
+	border: solid 1px #ddd;
+	background-color: #e2e2e2;
+	line-height: 1.5em;
+	font-size: 0.9em;
+	font-family: 'Courier New', monospace;
+	overflow: auto;
+}
