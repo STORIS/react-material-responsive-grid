@@ -2,6 +2,12 @@
 
 A set of React components implementing the [material-responsive-grid](https://github.com/STORIS/material-responsive-grid) CSS framework.
 
+## Installation ##
+
+```
+npm i react-material-responsive-grid --save
+```
+
 ## Components ##
 
 ### Grid ###
