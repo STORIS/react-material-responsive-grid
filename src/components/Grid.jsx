@@ -4,19 +4,25 @@ import { getClass } from '../shared/utils';
 const Grid = ({
 	className,
 	fixed,
+	marginless,
 	tagName,
 	...other
 }) => {
 	const classNames = [getClass('grid')];
 
-	if (className) {
-		classNames.push(className);
+	if (fixed === 'left') {
+		classNames.push(getClass('fixed-left'));
+	} else if (fixed === 'center') {
+		classNames.push(getClass('fixed-center'));
 	}
 
-	if (fixed === 'left') {
-		classNames.push(getClass('grid-fixed-left'));
-	} else if (fixed === 'center') {
-		classNames.push(getClass('grid-fixed-center'));
+	if (marginless) {
+		classNames.push(getClass('marginless'));
+	}
+
+	// specified class is added last
+	if (className) {
+		classNames.push(className);
 	}
 
 	return (
@@ -29,13 +35,15 @@ const Grid = ({
 
 Grid.propTypes = {
 	className: PropTypes.string,
-	fixed: PropTypes.string,
+	fixed: PropTypes.oneOf(['left', 'center']),
+	marginless: PropTypes.bool,
 	tagName: PropTypes.string,
 };
 
 Grid.defaultProps = {
 	className: null,
 	fixed: null,
+	marginless: false,
 	tagName: 'div',
 };
 

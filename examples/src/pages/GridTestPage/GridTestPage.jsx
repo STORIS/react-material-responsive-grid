@@ -4,7 +4,7 @@ import styles from './styles.css';
 
 const GridTestPage = () => (
 	<Grid>
-		<h2>Grid System</h2>
+		<h2>Material Responsive Grid (Components)</h2>
 		<p>This project uses <a href="https://github.com/STORIS/react-material-responsive-grid">react-material-responsive-grid</a> to define responsive layouts.  This set of React components implements the <a href="https://github.com/STORIS/material-responsive-grid">material-responsive-grid</a> CSS framework.</p>
 
 		<section>
@@ -97,7 +97,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Offset Columns</h2>
-			<p>Columns that are positioned by specifying an offset, which skips the specified number of columns</p>
+			<p>
+				Columns that are positioned by specifying an offset, which skips the
+				specified number of columns
+			</p>
 			<Row>
 				<Col xs4Offset={3} xs4={1}>
 					<div className={styles.box}>1st</div>
@@ -241,7 +244,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Reorder Columns</h2>
-			<p>Columns can become the first or last in the row.  Column position is based on the Row&apos;s flow direction, which can be reversed.</p>
+			<p>
+				Columns can become the first or last in the row.  Column position is based
+				on the Row&apos;s flow direction, which can be reversed.
+			</p>
 			<Row>
 				<Col xs4={1} sm8={1} sm={2}>
 					<div className={`${styles.box} ${styles['box-other']}`}>1</div>
@@ -332,7 +338,10 @@ const GridTestPage = () => (
 
 		<section>
 			<h2>Reversing a Row</h2>
-			<p>Rows can be reversed.  This changes the flow direction, which affects columns that have been changed to be first or last.</p>
+			<p>
+				Rows can be reversed.  This changes the flow direction, which affects columns
+				that have been changed to be first or last.
+			</p>
 			<Row reverse>
 				<Col xs4={1} sm8={1} sm={2}>
 					<div className={`${styles.box} ${styles['box-other']}`}>1</div>
@@ -566,6 +575,110 @@ const GridTestPage = () => (
      </Row>
   </Grid>`}</pre>
 		</section>
+
+		<section>
+			<h2>Marginless Grid</h2>
+			<p>
+				By default, grids have a margin that preserves the outer padding on edge-adjacent
+				columns and prevents a row of content from spanning edge to edge.  A marginless
+				grid eliminates this outer padding.
+			</p>
+			<Grid>
+				<Row>
+					<Col xs4={4} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Default Grid
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</Col>
+				</Row>
+			</Grid>
+			<Grid marginless>
+				<Row>
+					<Col xs4={4} className={styles['box-other']}>
+						<div className={styles.inner}>Marginless Grid</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Inner
+						</div>
+					</Col>
+					<Col xs4={1} className={styles['box-other']}>
+						<div className={styles.inner}>
+							Outer
+						</div>
+					</Col>
+				</Row>
+			</Grid>
+			<pre className={styles.code}>{`  <Grid>
+     <Row>
+        <Col xs4={4}>
+           Default Grid
+        </Col>
+        <Col xs4={1}>
+           Outer
+        </Col>
+        <Col xs4={1}>
+           Inner
+        </Col>
+        <Col xs4={1}>
+           Inner
+        </Col>
+        <Col xs4={1}>
+           Outer
+        </Col>
+     </Row>
+  </Grid>
+  <Grid marginless>
+     <Row>
+        <Col xs4={4}>
+           Marginless Grid
+        </Col>
+        <Col xs4={1}>
+           Outer
+        </Col>
+        <Col xs4={1}>
+           Inner
+        </Col>
+        <Col xs4={1}>
+           Inner
+        </Col>
+        <Col xs4={1}>
+           Outer
+        </Col>
+     </Row>
+  </Grid>`}</pre>
+		</section>
+
 	</Grid>
 );
 
