@@ -12,7 +12,20 @@ import Grid from '../../components/Grid';
 const renderer = TestUtils.createRenderer();
 
 describe('Grid', () => {
-	it('Should add "grid-fixed-left" class if fixed left', () => {
+	it('Should add "marginless" class if marginless', () => {
+		renderer.render(<Grid marginless />);
+
+		const {
+			type,
+			props: { className },
+		} = renderer.getRenderOutput();
+
+		expect(type).toBe('div');
+		expect(className).toContain(style.grid);
+		expect(className).toContain(style.marginless);
+	});
+
+	it('Should add "fixed-left" class if fixed left', () => {
 		renderer.render(<Grid fixed="left" />);
 
 		const {
@@ -22,10 +35,10 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toContain(style['grid-fixed-left']);
+		expect(className).toContain(style['fixed-left']);
 	});
 
-	it('Should add "grid-fixed-center" class if fixed center', () => {
+	it('Should add "fixed-center" class if fixed center', () => {
 		renderer.render(<Grid fixed="center" />);
 
 		const {
@@ -35,10 +48,10 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toContain(style['grid-fixed-center']);
+		expect(className).toContain(style['fixed-center']);
 	});
 
-	it('Should not add "grid-fixed-left" or "grid-fixed-center" class fixed is invalid', () => {
+	it('Should not add "fixed-left" or "fixed-center" class fixed is invalid', () => {
 		renderer.render(<Grid fixed="right" />);
 
 		const {
@@ -48,11 +61,11 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toNotContain(style['grid-fixed-left']);
-		expect(className).toNotContain(style['grid-fixed-left']);
+		expect(className).toNotContain(style['fixed-left']);
+		expect(className).toNotContain(style['fixed-center']);
 	});
 
-	it('Should not add "grid-fixed-left" or "grid-fixed-center" class if fluid', () => {
+	it('Should not add "fixed-left", "fixed-center", or "marginless" class if unspecified', () => {
 		renderer.render(<Grid />);
 
 		const {
@@ -62,8 +75,9 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toNotContain(style['grid-fixed-left']);
-		expect(className).toNotContain(style['grid-fixed-left']);
+		expect(className).toNotContain(style['fixed-left']);
+		expect(className).toNotContain(style['fixed-center']);
+		expect(className).toNotContain(style.marginless);
 	});
 
 	it('Should not replace specified className', () => {
@@ -72,7 +86,7 @@ describe('Grid', () => {
 		const { className } = renderer.getRenderOutput().props;
 
 		expect(className).toContain('foo');
-		expect(className).toContain(style['grid-fixed-left']);
+		expect(className).toContain(style['fixed-left']);
 	});
 
 	it('Should support custom tag name', () => {
