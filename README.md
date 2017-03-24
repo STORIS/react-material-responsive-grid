@@ -17,16 +17,19 @@ Container for Row components, intended as a layout
 #### Features ####
 
 - Adheres to [Material Design responsive UI](https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints) standards for screens at or exceeding 1600 px
-- Fluid by default, allows the Grid to continue growing
+- Fluid by default, allows the Grid to continue 
+- Margin by default, preserves the outer padding for outer columns, preventing a row of content from spanning edge to edge
 - Optionally fixed width for viewports larger than 1599 px, centered or left aligned
+- Optionally marginless, allow row content to span from edge to edge
 
 #### Properties ####
 
-Name      | Default | Value                  | Description
---------- | ------- | ---------------------- | -----------------------------------------------------------------------------
-fixed     |         | { *left* or *center* } | Grid is fixed width and aligned as specified for viewports larger than 1599px
-tagName   | *div*   |                        | The type of tag to use when rendering this element
-className |         |                        | The CSS class name of this element
+Name       | Default | Value                  | Description
+---------- | ------- | ---------------------- | -----------------------------------------------------------------------------
+fixed      |         | { *left* or *center* } | Grid is fixed width and aligned as specified for viewports larger than 1599px
+marginless | *false* | Boolean                | Grid has no margin, row content can span edge to edge
+tagName    | *div*   |                        | The type of tag to use when rendering this element
+className  |         |                        | The CSS class name of this element
 
 
 ### Row ###

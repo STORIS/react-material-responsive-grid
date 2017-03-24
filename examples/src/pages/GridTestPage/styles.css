@@ -6,6 +6,13 @@
 	text-align: center;
 }
 
+.inner {
+	background-color: rgba(255, 143, 0, 0.7);
+	border: solid 1px rgba(255, 143, 0, 0.5);
+	padding: 1.0em;
+	text-align: center;
+}
+
 .box-container {
 	padding: 16px 16px 0 16px;
 }

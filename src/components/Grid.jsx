@@ -4,6 +4,7 @@ import { getClass } from '../shared/utils';
 const Grid = ({
 	className,
 	fixed,
+	marginless,
 	tagName,
 	...other
 }) => {
@@ -14,9 +15,13 @@ const Grid = ({
 	}
 
 	if (fixed === 'left') {
-		classNames.push(getClass('grid-fixed-left'));
+		classNames.push(getClass('fixed-left'));
 	} else if (fixed === 'center') {
-		classNames.push(getClass('grid-fixed-center'));
+		classNames.push(getClass('fixed-center'));
+	}
+
+	if (marginless) {
+		classNames.push(getClass('marginless'));
 	}
 
 	return (
@@ -29,13 +34,15 @@ const Grid = ({
 
 Grid.propTypes = {
 	className: PropTypes.string,
-	fixed: PropTypes.string,
+	fixed: PropTypes.oneOf(['left', 'center']),
+	marginless: PropTypes.bool,
 	tagName: PropTypes.string,
 };
 
 Grid.defaultProps = {
 	className: null,
 	fixed: null,
+	marginless: false,
 	tagName: 'div',
 };
 
