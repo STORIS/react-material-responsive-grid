@@ -36,10 +36,6 @@ const Col = ({
 	const newProps = { ...other };
 	const classNames = [];
 
-	if (className) {
-		classNames.push(className);
-	}
-
 	// size specific properties
 	if (xs4) {
 		classNames.push(getClass(`col-xs4-${xs4}`));
@@ -150,6 +146,11 @@ const Col = ({
 	pushSizeClassNames(classNames, first, 'first-');
 	pushSizeClassNames(classNames, last, 'last-');
 	pushSizeClassNames(classNames, hidden, 'hidden-', '-only');
+
+	// specified class is added last
+	if (className) {
+		classNames.push(className);
+	}
 
 	if (classNames.length) {
 		newProps.className = classNames.filter(cssName => cssName).join(' ');

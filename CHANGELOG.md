@@ -10,3 +10,6 @@ HEAD
 - Grid's fixed property corresponds with new .fixed-left and .fixed-center modifiers for .grid
 - Grid's fixed property now uses an enumeration instead of string for propTypes
 - Test for Grid now validates functionality of marginless property
+
+### Fixed
+- Classnames applied to Grid, Row, or Col will be placed last so that the consumer of this library can override any styles they see fit

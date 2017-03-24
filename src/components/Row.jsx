@@ -17,10 +17,6 @@ const Row = ({
 }) => {
 	const classNames = [getClass('row')];
 
-	if (className) {
-		classNames.push(className);
-	}
-
 	if (reverse) {
 		classNames.push(getClass('reverse'));
 	}
@@ -34,6 +30,11 @@ const Row = ({
 	pushSizeClassNames(classNames, bottom, 'bottom-');
 	pushSizeClassNames(classNames, around, 'around-');
 	pushSizeClassNames(classNames, between, 'between-');
+
+	// specified class is added last
+	if (className) {
+		classNames.push(className);
+	}
 
 	return (
 		React.createElement(tagName || 'div', {

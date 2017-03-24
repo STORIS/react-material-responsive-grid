@@ -184,13 +184,14 @@ describe('Col', () => {
 		expect(className).toBe(undefined);
 	});
 
-	it('Should not replace specified className', () => {
+	it('Should retain specified className as last class', () => {
 		renderer.render(<Col className="foo" md={3} />);
 
 		const { className } = renderer.getRenderOutput().props;
 
 		expect(className).toContain('foo');
 		expect(className).toContain(style['col-md-3']);
+		expect(className.split(' ').pop()).toEqual('foo');
 	});
 
 	it('Should apply both class names both forms of a size property are applied', () => {

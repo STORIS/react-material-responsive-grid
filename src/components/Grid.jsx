@@ -10,10 +10,6 @@ const Grid = ({
 }) => {
 	const classNames = [getClass('grid')];
 
-	if (className) {
-		classNames.push(className);
-	}
-
 	if (fixed === 'left') {
 		classNames.push(getClass('fixed-left'));
 	} else if (fixed === 'center') {
@@ -22,6 +18,11 @@ const Grid = ({
 
 	if (marginless) {
 		classNames.push(getClass('marginless'));
+	}
+
+	// specified class is added last
+	if (className) {
+		classNames.push(className);
 	}
 
 	return (

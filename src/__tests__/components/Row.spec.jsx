@@ -104,13 +104,14 @@ describe('Row', () => {
 		expect(className).toContain(style['bottom-xl']);
 	});
 
-	it('Should not replace specified className', () => {
+	it('Should retain specified className as last class', () => {
 		renderer.render(<Row className="foo" end={['md']} />);
 
 		const { className } = renderer.getRenderOutput().props;
 
 		expect(className).toContain('foo');
 		expect(className).toContain(style['end-md']);
+		expect(className.split(' ').pop()).toEqual('foo');
 	});
 
 	it('Should support custom tag name', () => {
