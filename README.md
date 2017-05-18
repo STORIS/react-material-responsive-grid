@@ -118,7 +118,7 @@ className  |         |                       | The CSS class name of this elemen
       <Col hiddenDown="md" lg={6}>
          <p>This column isn't visible for extra-small, small, 
          and medium screens, but is visible for large and 
-         extra-large screens.  It consumes half of the row.
+         extra-large screens.  It consumes half of the row.</p>
       </Col>
       <Col hiddenDown="sm" hiddenUp="xl" md={12}>
          <p>This column is only visible for medium and large
