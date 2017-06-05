@@ -1,6 +1,6 @@
 import expect from 'expect';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { createRenderer } from 'react-test-renderer/shallow';
 import style from 'material-responsive-grid/material-responsive-grid.css';
 import Grid from '../../components/Grid';
 
@@ -9,7 +9,7 @@ import Grid from '../../components/Grid';
  * fixed: string (left | center)
  *	tagName: string
  */
-const renderer = TestUtils.createRenderer();
+const renderer = createRenderer();
 
 describe('Grid', () => {
 	it('Should add "marginless" class if marginless', () => {

@@ -107,29 +107,38 @@ className  |         |                       | The CSS class name of this elemen
 
 ## Example ##
 
-```
-<Grid>
-   <Row>
-      <Col xs4={4} lg={6}>
-         <p>This column consumes the entire row for extra-small,
-         small, and medium screens.  For large and extra-large
-         screens, it consumes half of the row.</p>
-      </Col>
-      <Col hiddenDown="md" lg={6}>
-         <p>This column isn't visible for extra-small, small, 
-         and medium screens, but is visible for large and 
-         extra-large screens.  It consumes half of the row.</p>
-      </Col>
-      <Col hiddenDown="sm" hiddenUp="xl" md={12}>
-         <p>This column is only visible for medium and large
-         screens and consumes the entire row.</p>
-      </Col>
-      <Col hidden={['sm8', 'sm', 'lg']} xs4={4}>
-         <p>This column is hidden for small and large screens
-         and consumes the entire row.</p>
-      </Col>
-   </Row>
-</Grid>
+```jsx
+import React from 'react';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
+class App extends React.Component {
+  render() {
+    return (
+      <Grid>
+         <Row>
+            <Col xs4={4} lg={6}>
+               <p>This column consumes the entire row for extra-small,
+               small, and medium screens.  For large and extra-large
+               screens, it consumes half of the row.</p>
+            </Col>
+            <Col hiddenDown="md" lg={6}>
+               <p>This column isn't visible for extra-small, small, 
+               and medium screens, but is visible for large and 
+               extra-large screens.  It consumes half of the row.</p>
+            </Col>
+            <Col hiddenDown="sm" hiddenUp="xl" md={12}>
+               <p>This column is only visible for medium and large
+               screens and consumes the entire row.</p>
+            </Col>
+            <Col hidden={['sm8', 'sm', 'lg']} xs4={4}>
+               <p>This column is hidden for small and large screens
+               and consumes the entire row.</p>
+            </Col>
+         </Row>
+      </Grid>
+    );
+  }
+}
 ```
 
 ## Inspiration ##

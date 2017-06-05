@@ -1,6 +1,6 @@
 import expect from 'expect';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { createRenderer } from 'react-test-renderer/shallow';
 import style from 'material-responsive-grid/material-responsive-grid.css';
 import Row from '../../components/Row';
 
@@ -17,7 +17,7 @@ import Row from '../../components/Row';
  *	between: arrayOf(string)
  *	tagName: string
  */
-const renderer = TestUtils.createRenderer();
+const renderer = createRenderer();
 
 describe('Row', () => {
 	it('Should add "reverse" class if "reverse" is set', () => {

@@ -1,10 +1,10 @@
 import expect from 'expect';
 import React from 'react';
-import TestUtils from 'react-addons-test-utils';
+import { createRenderer } from 'react-test-renderer/shallow';
 import style from 'material-responsive-grid/material-responsive-grid.css';
 import Col from '../../components/Col';
 
-const renderer = TestUtils.createRenderer();
+const renderer = createRenderer();
 
 /**
  *	className: string
