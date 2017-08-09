@@ -109,7 +109,7 @@ className  |         |                       | The CSS class name of this elemen
 
 ```jsx
 import React from 'react';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-material-responsive-grid';
 
 class App extends React.Component {
   render() {
