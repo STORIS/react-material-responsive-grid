@@ -51,7 +51,7 @@ describe('Grid', () => {
 		expect(className).toContain(style['fixed-center']);
 	});
 
-	it('Should not add "fixed-left" or "fixed-center" class fixed is invalid', () => {
+	it('Should not add "fixed-left" or "fixed-center" class if fixed is invalid', () => {
 		renderer.render(<Grid fixed="right" />);
 
 		const {
@@ -61,8 +61,8 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toNotContain(style['fixed-left']);
-		expect(className).toNotContain(style['fixed-center']);
+		expect(className).not.toContain(style['fixed-left']);
+		expect(className).not.toContain(style['fixed-center']);
 	});
 
 	it('Should not add "fixed-left", "fixed-center", or "marginless" class if unspecified', () => {
@@ -75,9 +75,9 @@ describe('Grid', () => {
 
 		expect(type).toBe('div');
 		expect(className).toContain(style.grid);
-		expect(className).toNotContain(style['fixed-left']);
-		expect(className).toNotContain(style['fixed-center']);
-		expect(className).toNotContain(style.marginless);
+		expect(className).not.toContain(style['fixed-left']);
+		expect(className).not.toContain(style['fixed-center']);
+		expect(className).not.toContain(style.marginless);
 	});
 
 	it('Should retain specified className as last class', () => {

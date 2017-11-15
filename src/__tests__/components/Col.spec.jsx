@@ -113,7 +113,7 @@ describe('Col', () => {
 		expect(className).toContain(style['first-md']);
 		expect(className).toContain(style['first-xl']);
 		expect(className).toContain(style['first-lg12']);
-		expect(className).toNotContain('xxl');
+		expect(className).not.toContain('xxl');
 	});
 
 	it('Should add "last-*" class if "last" property includes valid sizes', () => {
@@ -127,7 +127,7 @@ describe('Col', () => {
 		expect(className).toContain(style['last-md']);
 		expect(className).toContain(style['last-xl']);
 		expect(className).toContain(style['last-lg12']);
-		expect(className).toNotContain('xxl');
+		expect(className).not.toContain('xxl');
 	});
 
 	it('Should add "hidden-*-only" if "hidden" includes valid sizes', () => {
@@ -141,7 +141,7 @@ describe('Col', () => {
 		expect(className).toContain(style['hidden-md-only']);
 		expect(className).toContain(style['hidden-xl-only']);
 		expect(className).toContain(style['hidden-lg12-only']);
-		expect(className).toNotContain('xxl');
+		expect(className).not.toContain('xxl');
 	});
 
 	it('Should add "hidden-*-down" if "hiddenDown" is set to a valid size', () => {
