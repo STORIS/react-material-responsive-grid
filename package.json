@@ -1,7 +1,7 @@
 {
   "name": "react-material-responsive-grid-source",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A set of React components implementing the material-responsive-grid CSS framework.",
   "main": "build/index.js",
   "repository": {
