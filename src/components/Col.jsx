@@ -66,31 +66,31 @@ const Col = ({
 		classNames.push(getClass(`col-xl12-${xl12}`));
 	}
 
-	if (xs4Offset || xs4Offset === 0) {
+	if (xs4Offset != null) {
 		classNames.push(getClass(`col-xs4-offset-${xs4Offset}`));
 	}
 
-	if (xs8Offset || xs8Offset === 0) {
+	if (xs8Offset != null) {
 		classNames.push(getClass(`col-xs8-offset-${xs8Offset}`));
 	}
 
-	if (sm8Offset || sm8Offset === 0) {
+	if (sm8Offset != null) {
 		classNames.push(getClass(`col-sm8-offset-${sm8Offset}`));
 	}
 
-	if (sm12Offset || sm12Offset === 0) {
+	if (sm12Offset != null) {
 		classNames.push(getClass(`col-sm12-offset-${sm12Offset}`));
 	}
 
-	if (md12Offset || md12Offset === 0) {
+	if (md12Offset != null) {
 		classNames.push(getClass(`col-md12-offset-${md12Offset}`));
 	}
 
-	if (lg12Offset || lg12Offset === 0) {
+	if (lg12Offset != null) {
 		classNames.push(getClass(`col-lg12-offset-${lg12Offset}`));
 	}
 
-	if (xl12Offset || xl12Offset === 0) {
+	if (xl12Offset != null) {
 		classNames.push(getClass(`col-xl12-offset-${xl12Offset}`));
 	}
 
@@ -111,19 +111,19 @@ const Col = ({
 		classNames.push(getClass(`col-xl-${xl}`));
 	}
 
-	if (smOffset || smOffset === 0) {
+	if (smOffset != null) {
 		classNames.push(getClass(`col-sm-offset-${smOffset}`));
 	}
 
-	if (mdOffset || mdOffset === 0) {
+	if (mdOffset != null) {
 		classNames.push(getClass(`col-md-offset-${mdOffset}`));
 	}
 
-	if (lgOffset || lgOffset === 0) {
+	if (lgOffset != null) {
 		classNames.push(getClass(`col-lg-offset-${lgOffset}`));
 	}
 
-	if (xlOffset || xlOffset === 0) {
+	if (xlOffset != null) {
 		classNames.push(getClass(`col-xl-offset-${xlOffset}`));
 	}
 
