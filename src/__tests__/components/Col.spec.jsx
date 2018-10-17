@@ -69,17 +69,17 @@ describe('Col', () => {
 	it('Should add classes for screen size specific offset', () => {
 		renderer.render(
 			<Col
-				xs4Offset={1}
-				xs8Offset={2}
-				sm8Offset={3}
-				sm12Offset={4}
-				md12Offset={5}
-				lg12Offset={6}
-				xl12Offset={7}
-				smOffset={8}
-				mdOffset={9}
-				lgOffset={10}
-				xlOffset={11}
+				xs4Offset={0}
+				xs8Offset={1}
+				sm8Offset={2}
+				sm12Offset={3}
+				md12Offset={4}
+				lg12Offset={5}
+				xl12Offset={6}
+				smOffset={7}
+				mdOffset={8}
+				lgOffset={9}
+				xlOffset={10}
 			/>,
 		);
 
@@ -89,17 +89,17 @@ describe('Col', () => {
 		} = renderer.getRenderOutput();
 
 		expect(type).toBe('div');
-		expect(className).toContain(style['col-xs4-offset-1']);
-		expect(className).toContain(style['col-xs8-offset-2']);
-		expect(className).toContain(style['col-sm8-offset-3']);
-		expect(className).toContain(style['col-sm12-offset-4']);
-		expect(className).toContain(style['col-md12-offset-5']);
-		expect(className).toContain(style['col-lg12-offset-6']);
-		expect(className).toContain(style['col-xl12-offset-7']);
-		expect(className).toContain(style['col-sm-offset-8']);
-		expect(className).toContain(style['col-md-offset-9']);
-		expect(className).toContain(style['col-lg-offset-10']);
-		expect(className).toContain(style['col-xl-offset-11']);
+		expect(className).toContain(style['col-xs4-offset-0']);
+		expect(className).toContain(style['col-xs8-offset-1']);
+		expect(className).toContain(style['col-sm8-offset-2']);
+		expect(className).toContain(style['col-sm12-offset-3']);
+		expect(className).toContain(style['col-md12-offset-4']);
+		expect(className).toContain(style['col-lg12-offset-5']);
+		expect(className).toContain(style['col-xl12-offset-6']);
+		expect(className).toContain(style['col-sm-offset-7']);
+		expect(className).toContain(style['col-md-offset-8']);
+		expect(className).toContain(style['col-lg-offset-9']);
+		expect(className).toContain(style['col-xl-offset-10']);
 	});
 
 	it('Should add "first-*" class if "first" property includes valid sizes', () => {
